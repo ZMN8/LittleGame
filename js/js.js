@@ -3,7 +3,7 @@
  */
 var circle=document.querySelector(".circle");
 
-circle.onmouseenter= function () {
+circle.onclick= function () {
 fun(this);
 };
 
@@ -11,15 +11,14 @@ function fun(obj){
     obj.style.background="none";
     for(i=0;i<4;i++){
         var div=document.createElement("div");
-        div.onmouseenter=function(){
+        div.onclick=function(){
             fun(this);
         };
         div.className="pro_circle pos"+i;
         div.style.backgroundColor=rgb();
-        console.log(rgb());
         obj.appendChild(div);
     }
-    obj.onmouseenter=function(){return}
+    obj.onclick=function(){return}
 }
 function rgb(){
     var r=Math.floor(Math.random()*257);
@@ -29,5 +28,4 @@ function rgb(){
     return "rgb("+r+","+g+","+b+")";
 
 }
-//console.log(rgb())
 rgb();
